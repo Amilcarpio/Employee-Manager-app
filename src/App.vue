@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <Navbar />
+    <!-- componente Navbar com re-rendering -->
+    <Navbar :key="$route.fullPath" />
       <div class="container">
         <router-view/>
       </div>
