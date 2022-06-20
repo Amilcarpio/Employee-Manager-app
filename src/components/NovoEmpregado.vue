@@ -1,27 +1,26 @@
 <template>
-  <div id="novo-empregado">  
-    <h3>Preencha o formulário abaixo:</h3>
+  <div id="container"> 
+    <h3 class="mt-2">Preencha o formulário abaixo:</h3>
 
-    <div class="row">
-
+    <div class="form-group bg-primary p-5 text-white">
       <form  @submit.prevent="saveFuncionario" class="col-s-12">
 
-        <div class="form-group row">
+        <div class="form-group">
           <label>ID Funcionário #:</label>
           <input class="form-control form-control-md" type="text" v-model="func_id" required>
         </div>
 
-        <div class="form-group row">
+        <div class="form-group">
           <label>Nome:</label>
           <input class="form-control form-control-md" type="text" v-model="nome" required>
         </div>
 
-        <div class="form-group row">
+        <div class="form-group">
           <label>Cargo:</label>
           <input class="form-control form-control-md" type="text" v-model="cargo" required>
         </div>
 
-        <div class="form-group row">
+        <div class="form-group">
           <label>Setor:</label>
           <input class="form-control form-control-md" type="text" v-model="setor" required>
         </div>  

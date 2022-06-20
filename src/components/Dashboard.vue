@@ -1,24 +1,27 @@
 <template>
-  <div id="dashboard">
-    <ul class="collection with-header">
-        <li class="collection-header">
+  <div id="container-fluid">
+    <ul class="card">
+        <div class="card-header">
             <h4>Funcionários</h4>
-        </li>
-        <li v-for="empregado in empregados" :key="empregado.id" class="collection-item">
-            <div class="chip"> {{ empregado.setor }} </div>
-            {{ empregado.func_id }}:{{ empregado.nome }}
-            
-            <!-- Bindando parametros no router para cada id -->
-            <router-link 
-            v-bind:to="{ name: 'view-empregado', params: { func_id: empregado.func_id }}" class="btn-floating btn-large red">
-                <i class="fa fa-eye"></i>
-            </router-link>
-        </li>
+        </div>
+        <div class="card-body">
+            <ul v-for="empregado in empregados" :key="empregado.id" class="list-group">
+                <li class="list-group-item"> {{ empregado.nome }} </li>
+                <li class="list-group-item"> {{ empregado.setor }} </li>
+                <li class="list-group-item"> {{ empregado.func_id }} </li>
+                <!-- Bindando parametros no router para cada id -->
+                <router-link 
+                v-bind:to="{ name: 'view-empregado', params: { func_id: empregado.func_id }}" class="btn-floating btn-large red">
+                <label> Ver mais </label>
+                </router-link>
+            </ul>
+        </div>
     </ul>
 
     <div class="fixed-action-btn">
         <router-link to="/novo-funcionario" class="btn-floating btn-large red">
         <i class="fa fa-plus"></i>
+        <label> Adicionar novo funcionário </label>
         </router-link>
     </div>
   </div>
@@ -53,5 +56,7 @@ export default {
 </script>
 
 <style>
-
+    .container{
+        width: 50%;
+    }
 </style>

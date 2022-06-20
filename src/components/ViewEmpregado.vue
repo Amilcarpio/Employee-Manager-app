@@ -1,27 +1,27 @@
 <template>
-    <div id="view-empregado">
-        <ul class="row d-flex">
-            <li class="list-group col">
-                <h6 class="list-group-item col-lg-4">{{ nome }}</h6>
-                <h6 class="list-group-item col-lg-4">Cargo: {{ cargo }}</h6>
-                <h6 class="list-group-item col-lg-4">Setor: {{ setor }}</h6>
-                <h6 class="list-group-item col-lg-4">ID#: {{ func_id }}</h6>
-            </li>
-        </ul>
-      <div class="row">
-        <router-link to="/" class="btn btn-primary col-sm-6 mt-5">Voltar</router-link>
+<div class="container">
+  <div id="view-empregado" class="card mt-5">
+      <div class="card-header text-center">
+        <h3> {{ nome }} </h3>
       </div>
-      <div class="row">
-        <button 
-        v-on:click="deletarEmpregado" 
-        class="btn btn-danger col-sm-6 mt-1">
-        Apagar
-        </button>
-      </div>
-      <div class="row">
-        <router-link v-bind:to="{name:'edit-empregado', params: loadData()}" class="btn btn-primary col-sm-6 mt-5">Editar</router-link>
+    <div class="card-body">
+      <ul class="list-group">
+        <li class="list-group-item">Cargo: {{ cargo }}</li>
+        <li class="list-group-item">Setor: {{ setor }}</li>
+        <li class="list-group-item">ID#: {{ func_id }}</li>
+      </ul>
+      <div class="d-flex">
+          <router-link to="/" class="btn btn-warning col sm-4 m-2 text-white">Voltar</router-link>
+          <a 
+          v-on:click="deletarEmpregado" 
+          class="btn btn-danger col sm-4 m-2 text-white">
+          Apagar
+          </a>
+          <router-link v-bind:to="{name:'edit-empregado', params: loadData()}" class="btn btn-primary col sm-4 m-2 text-white">Editar</router-link>
       </div>
     </div>
+  </div>
+</div>
 </template>
 
 <script>
@@ -85,4 +85,8 @@
     }
 </script>
 
-
+<style scoped>
+  .container {
+    width: 100%;
+  }
+</style>

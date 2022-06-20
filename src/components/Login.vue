@@ -1,28 +1,30 @@
 <template>
   <!-- login form -->
-<div class="container">
-    <div class="row">
-        <div class="col s12 m8 offset-m2">
-            <div class="login card-panel blue white-text center">
+    <div class="container">
+        <div class="card text-center bg-primary text-white mt-5">
+            <div class="card-header">
                 <h3>Login</h3>
-                    <form>
-                        <div class="input-field">
-                            <i class="material-icons prefix">Email</i>
-                            <input type="text" id="email" v-model="email">
-                            <label for="email">Email</label>
-                        </div>
-
-                        <div class="input-field">
-                            <i class="material-icons prefix">Lock</i>
-                            <input type="password" id="password" v-model="password">
-                            <label for="password">Password</label>
-                        </div>
-                        <button @click="logar" class="btn btn-large grey lighteen-4 black-text">Login</button>
-                    </form>
             </div>
+        <form>
+            <div class="form-group row">
+                <i class="material-icons prefix"></i>
+                <label for="staticEmail" class="col-sm-2 col-form-label mt-2" >Email</label>
+                <div class="col-sm-8">
+                    <input type="staticEmail" class="form-control-plaintext text-white mt-2" id="email" placeholder="exemplo@email.com" v-model="email">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <i class="material-icons prefix"></i>
+                <label for="staticEmail" class="col-sm-2 col-form-label mt-2" >Senha</label>
+                <div class="col-sm-8">
+                    <input type="password" class="form-control-plaintext text-white mt-2" id="password" placeholder="senha" v-model="password">
+                </div>
+            </div>
+            <button @click="logar" class="btn btn-lg mb-3 btn-light">Login</button>
+        </form>
         </div>
     </div>
-</div>
 </template>
 
 <script>
@@ -38,7 +40,7 @@ export default {
 
     methods: {
         //logando o usuário no sistema
-        logar: function(e) {
+        logar(e) {
             e.preventDefault()
             const auth = getAuth();
             signInWithEmailAndPassword(auth, this.email, this.password)
@@ -57,3 +59,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.container {
+    width: 70%;
+}
+</style>
