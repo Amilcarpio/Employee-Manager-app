@@ -1,7 +1,7 @@
 <template>
   <!-- login form -->
     <div class="container">
-        <div class="card text-center bg-secondary text-white mt-5">
+        <div class="card text-center bg-secondary text-white mt-5 p-2">
             <div class="card-header">
                 <h3>Criar nova conta de usuário:</h3>
             </div>

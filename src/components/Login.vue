@@ -1,7 +1,7 @@
 <template>
   <!-- login form -->
     <div class="container">
-        <div class="card text-center bg-primary text-white mt-5">
+        <div class="card text-center bg-primary text-white mt-5 p-2">
             <div class="card-header">
                 <h3>Login</h3>
             </div>

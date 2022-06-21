@@ -1,14 +1,15 @@
 <template>
   <div id="container-fluid">
-    <ul class="card">
-        <div class="card-header">
+    <ul class="card mt-3">
+        <div class="card-header p-1">
             <h4>Funcionários</h4>
         </div>
         <div class="card-body">
             <ul v-for="empregado in empregados" :key="empregado.id" class="list-group">
+                <li class="list-group-item"> {{ empregado.func_id }} </li>
                 <li class="list-group-item"> {{ empregado.nome }} </li>
                 <li class="list-group-item"> {{ empregado.setor }} </li>
-                <li class="list-group-item"> {{ empregado.func_id }} </li>
+                <li class="list-group-item"> {{ empregado.cargo }} </li>
                 <!-- Bindando parametros no router para cada id -->
                 <router-link 
                 v-bind:to="{ name: 'view-empregado', params: { func_id: empregado.func_id }}" class="btn-floating btn-large red">
