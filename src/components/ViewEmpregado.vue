@@ -1,7 +1,7 @@
 <template>
 <div class="container">
   <div id="view-empregado" class="card mt-5">
-      <div class="card-header text-center">
+      <div class="card-header bg-primary text-white text-center">
         <h3> {{ nome }} </h3>
       </div>
     <div class="card-body">
