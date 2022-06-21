@@ -1,9 +1,9 @@
 <template>
   <div id="container-fluid">
-    <ul class="card">
-        <div class="card-header">
+    <div class="card-header bg-primary text-white mt-4">
             <h4>Funcionários</h4>
-        </div>
+    </div>
+    <ul class="card">
         <div class="card-body">
             <ul v-for="empregado in empregados" :key="empregado.id" class="list-group">
                 <li class="list-group-item"> {{ empregado.nome }} </li>
